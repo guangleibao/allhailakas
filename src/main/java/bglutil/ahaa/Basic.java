@@ -2,26 +2,14 @@ package bglutil.ahaa;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 
 public class Basic {
-    public static String initRegion(String profileName) {
+    public static String initRegion(String profileName) throws Exception {
         File config = new File(System.getProperty("user.home") + "/.aws/config");
         String regionCode = null;
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader(config));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        String line = null;
-        try {
-            line = br.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        BufferedReader br = new BufferedReader(new FileReader(config));
+        String line = br.readLine();
         int profileReady = 0;
         String profile = null;
         String region = null;
@@ -33,11 +21,7 @@ public class Basic {
                 profile = "default";
                 profileReady = 1;
             }
-            try {
-                line = br.readLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            line = br.readLine();
             if (line != null && line.matches("^ {0,}region {0,}=.*$")) {
                 region = line.replaceAll(" {0,}region {0,}= {0,}", "").replaceAll(" {0,}$", "");
                 if (profileReady == 1) {
@@ -48,6 +32,7 @@ public class Basic {
                 }
             }
         }
+        br.close();
         return regionCode;
     }
 }

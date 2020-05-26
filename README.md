@@ -1,5 +1,5 @@
 # All Hail AK/AS
-Access AWS Console in a passwordless way by using Access Key.
++ Access AWS Console in a passwordless way by using Access Key: `getConsole.sh`.
 
 ## Build 
 + Prerequisites: Maven.
