@@ -2,7 +2,11 @@ package bglutil.ahaa;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class Basic {
     public static String initRegion(String profileName) throws Exception {
@@ -34,5 +38,28 @@ public class Basic {
         }
         br.close();
         return regionCode;
+    }
+
+    public static void copyFile(String source, String dest) throws Exception {
+        InputStream inStream = null;
+        OutputStream outStream = null;
+
+        File file1 = new File(source);
+        File file2 = new File(dest);
+
+        inStream = new FileInputStream(file1);
+        outStream = new FileOutputStream(file2);
+
+        byte[] buffer = new byte[1024];
+
+        int length;
+        while ((length = inStream.read(buffer)) > 0) {
+            outStream.write(buffer, 0, length);
+        }
+
+        if (inStream != null)
+            inStream.close();
+        if (outStream != null)
+            outStream.close();
     }
 }

@@ -1,5 +1,8 @@
 # All Hail AK/AS
-+ Access AWS Console in a passwordless way by using Access Key: `getConsole.sh`.
++ Access AWS Console in a passwordless way by using Access Key.
+    - e.g: `./getConsole.sh ec2 profile1`
++ Rotate Access Keys in `~/.aws/credentials`.
+    - e.g: `./rotateAk.sh profile1`
 
 ## Build 
 + Prerequisites: Maven.

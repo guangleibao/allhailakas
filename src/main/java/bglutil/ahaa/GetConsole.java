@@ -21,7 +21,7 @@ import software.amazon.awssdk.services.sts.model.GetFederationTokenRequest;
 import software.amazon.awssdk.services.sts.model.GetFederationTokenResponse;
 
 public class GetConsole {
-    public static void main(String args[]) throws Exception{
+    public static void main(String args[]) throws Exception {
         // Log setting
         Logger.getRootLogger().setLevel(Level.OFF);
         // Parameters
