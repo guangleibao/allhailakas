@@ -75,7 +75,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>bglutil.ahaa.AllHailAkAs</mainClass>
+              <mainClass>bglutil.ahaa.GetConsole</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -106,7 +106,7 @@
           </descriptorRefs>
           <archive>
             <manifest>
-              <mainClass>bglutil.ahaa.AllHailAkAs</mainClass>
+              <mainClass>bglutil.ahaa.GetConsole</mainClass>
             </manifest>
           </archive>
         </configuration>
